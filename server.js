@@ -21,9 +21,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true
-});
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser :true});
 
 app.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/exercise.html"));
